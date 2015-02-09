@@ -1,0 +1,126 @@
+1. Overview
+
+DESTINY is an acronym for 3D dEsign-Space exploraTIon Tool for SRAM, eDRAM and Non-volatile memorY. 
+In its purpose, DESTINY is similar to CACTI, CACTI-3DD or NVSim. 
+
+DESTINY is a tool for modeling both 2D and 3D caches designed with five prominent memory technologies: 
+SRAM, eDRAM (embedded DRAM), PCM (or PCRAM), STT-RAM (or STT-MRAM) and ReRAM (or RRAM), which covers 
+both conventional and emerging technologies. DESTINY has been validated against several 
+commercial prototypes. It can be used to model technology nodes ranging from 22nm to 180nm. 
+Thus, DESTINY is intended to be a comprehensive tool.  
+
+Matthew Poremba and Sparsh Mittal are lead-developers of DESTINY.
+DESTINY utilizes the framework for modeling 2D SRAM and 2D NVM from NVSim.
+Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD.   
+------------------------------------------------------
+
+2. Compiling DESTINY
+
+DESTINY is developed in C++. It can be compiled on both Microsoft Windows and Unix-like OSes. 
+To build the tool under Linux, simply issue
+
+     $ make
+-------------------------------------------------------
+
+3. Running DESTINY
+
+DESTINY must be compiled with a user-specified configuration files, as follows:
+
+      $ ./destiny <file>.cfg
+
+-------------------------------------------------------
+4. The meaning and possible values of parameters added in DESTINY
+
+-StackedDieCount - Number of dies over which the memory is distributed
+
+
+-PartitionGranularity - 
+0: Coarse granularity: This assumes that address, control, and data signals are 
+broadcast to all stacked dies and decoded on the destination die. 
+1: Fine granularity: This assumes that address signals are pre-decoded on a 
+separate logic layer and the undecoded address signals are broadcast to all 
+stacked dies. The control and data are still shared. 
+Note that the total number of dies in fine granularity is StackedDieCount + 1
+
+
+-LocalTSVProjection: 
+0: Use aggressive TSV projection from ITRS for local TSVs.
+1: Use conservative values from industry measurements for local TSVs
+
+Local TSVs are used in fine granularity partitioning to route pre-decoded signals
+
+
+-GlobalTSVProjection: 
+0: Use aggressive TSV projection from ITRS for global TSVs
+1: Use conservative values from industry measurements for global TSVs
+
+Global TSVs are used in both fine and coarse granularity partitioning to 
+route broadcast signals (e.g., data and control signals)
+
+
+-TSVRedundancy: Any floating point value from 1.0 or higher (reasonably, about 
+2.0 is the maximum). ((TSVRedundancy - 1)*100) is the percentage of extra TSVs 
+assumed for each TSV cluster for fault tolerance / TSV yield issues.
+
+
+-MonolithicStackCount: Integer value e.g., 1, 2, 4. This is the number of memory 
+layers on the *same* die which are monolithically stacked.
+
+
+
+Other important parameters added:
+
+-AllowDifferenceTagTech: Allow the tag array of a cache to be a different 
+technology than the data array (e.g., SRAM tag array with STT-RAM data array).
+
+-MemoryCellInputFile: This parameter can be specified multiple times 
+to consider multiple different technologies in the same simulation run.
+
+-PrintAllOptimals: Print the optimal design for each optimization 
+target (can be used to find the best of multiple technology inputs).
+
+-ForceBank3D: Dimensions of each bank in terms of number of Mats in each direction.
+-ForceBank3DA: Same as ForceBank3D, except forcing the number of active Mats is not required
+-ForceBankA: Same as ForceBank in NVSim, except forcing the number of active Mats is not required.
+-ForceMatA: Same as ForceMat in NVSim, except forcing the number of active Subarrays is not required.
+
+-------------------------------------------------------
+
+5. Hacking DESTINY code and possible extensions
+
+We expect that end-users of DESTINY should be able to easily modify it to add 
+various features. We are also working to add new features to it and provide a documentation.
+
+Some possible extensions to DESTINY include, adding MLC (multi-level cell) modeling capability,
+modeling other memory technologies such as race-track memory (domain wall memory) etc. 
+
+We welcome any contribution from the end-users of DESTINY. 
+
+-------------------------------------------------------
+
+6. Relevant papers
+
+The following DATE-2015 paper provides a general introduction of DESTINY and the technical report 
+describes the tool in more  detail and also shows its use in performing design-space exploration. 
+If you use DESTINY in a research publication, we request you to cite any of the these paper/report. 
+
+Matthew Poremba, Sparsh Mittal, Dong Li, Jeffrey S Vetter and Yuan Xie, "DESTINY: A Tool for 
+Modeling Emerging 3D NVM and eDRAM caches",  Design Automation and Test in Europe (DATE), 2015.
+
+Sparsh Mittal, Matthew Poremba,  Jeffrey S Vetter and Yuan Xie, "Exploring Design Space 
+of 3D NVM and eDRAM Caches Using DESTINY Tool", ORNL Technical Report no. ORNL/TM-2014/636, 2014. 
+
+		
+	
+-------------------------------------------------------
+7. Contact 
+
+For questions and comments, contact
+Matthew Poremba (poremba@cse.psu.edu)
+Sparsh Mittal(sparsh0mittal@gmail.com)
+
+
+
+
+
+

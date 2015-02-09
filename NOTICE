@@ -1,0 +1,4 @@
+This software utilizes the framework for modeling 2D SRAM and 2D NVM from NVSim.
+Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD. 
+
+This software is released under modified BSD license, see the file LICENSE.
