@@ -1,3 +1,14 @@
+DESTINY : 3D dEsign-Space exploraTIon Tool for SRAM, eDRAM and Non-volatile memorY
+
+Oak Ridge National Laboratory
+Penn State University
+University of California, Santa Barbara
+
+https://code.ornl.gov/3d_cache_modeling_tool/destiny
+destiny-help@elist.ornl.gov
+
+20 Feb 2015 
+
 ### Overview
 
 DESTINY is an acronym for 3D dEsign-Space exploraTIon Tool for SRAM, eDRAM and Non-volatile memorY. 
@@ -10,9 +21,17 @@ commercial prototypes. It can be used to model technology nodes ranging from 22n
 Thus, DESTINY is intended to be a comprehensive tool.  
 
 Matthew Poremba and Sparsh Mittal are lead-developers of DESTINY.
+
 DESTINY utilizes the framework for modeling 2D SRAM and 2D NVM from NVSim.
 Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD. 
-  
+
+### Sponsors
+
+This work was supported by the Office of Advanced Scientific Computing Research in 
+the U.S. Department of Energy, under the project “Blackcomb - Hardware-Software
+ Co-design for Non-Volatile Memory in Exascale Systems” (https://ft.ornl.gov/trac/blackcomb/).
+ For information, please see our webpage http://ft.ornl.gov/. 
+ 
 ------------------------------------------------------
 ###  Relevant papers, acknowledgement and contact information
 
@@ -28,15 +47,11 @@ Sparsh Mittal, Matthew Poremba,  Jeffrey S Vetter and Yuan Xie, "Exploring Desig
 of 3D NVM and eDRAM Caches Using DESTINY Tool", ORNL Technical Report no. ORNL/TM-2014/636, 2014
 (available here http://goo.gl/qzyWFE). 
 
-This work was supported by the Office of Advanced Scientific Computing Research in 
-the U.S. Department of Energy, under the project “Blackcomb - Hardware-Software
- Co-design for Non-Volatile Memory in Exascale Systems” (https://ft.ornl.gov/trac/blackcomb/).
- For information, please see our webpage http://ft.ornl.gov/. 
-
 Support for DESTINY is provided on a best-effort basis. For receiving announcements,
  or sending questions and comments, please subscribe to the mailing list
  destiny-help@elist.ornl.gov by visiting the following 
 webpage: https://elist.ornl.gov/mailman/listinfo/destiny-help
+
 
 -------------------------------------------------------
 
@@ -59,7 +74,6 @@ DESTINY must be compiled with a user-specified configuration files, as follows:
 
 -StackedDieCount - Number of dies over which the memory is distributed
 
-
 -PartitionGranularity - 
 0: Coarse granularity: This assumes that address, control, and data signals are 
 broadcast to all stacked dies and decoded on the destination die. 
@@ -67,7 +81,6 @@ broadcast to all stacked dies and decoded on the destination die.
 separate logic layer and the undecoded address signals are broadcast to all 
 stacked dies. The control and data are still shared. 
 Note that the total number of dies in fine granularity is StackedDieCount + 1
-
 
 -LocalTSVProjection: 
 0: Use aggressive TSV projection from ITRS for local TSVs.
@@ -91,8 +104,6 @@ assumed for each TSV cluster for fault tolerance / TSV yield issues.
 
 -MonolithicStackCount: Integer value e.g., 1, 2, 4. This is the number of memory 
 layers on the *same* die which are monolithically stacked.
-
-
 
 Other important parameters added:
 
@@ -121,3 +132,6 @@ Some possible extensions to DESTINY include, adding MLC (multi-level cell) model
 modeling other memory technologies such as race-track memory (domain wall memory) etc. 
 
 We welcome any contribution from the end-users of DESTINY. 
+
+
+### EOF
