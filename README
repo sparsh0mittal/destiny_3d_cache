@@ -1,4 +1,4 @@
-1. Overview
+### Overview
 
 DESTINY is an acronym for 3D dEsign-Space exploraTIon Tool for SRAM, eDRAM and Non-volatile memorY. 
 In its purpose, DESTINY is similar to CACTI, CACTI-3DD or NVSim. 
@@ -11,25 +11,51 @@ Thus, DESTINY is intended to be a comprehensive tool.
 
 Matthew Poremba and Sparsh Mittal are lead-developers of DESTINY.
 DESTINY utilizes the framework for modeling 2D SRAM and 2D NVM from NVSim.
-Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD.   
+Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD. 
+  
 ------------------------------------------------------
+###  Relevant papers, acknowledgement and contact information
 
-2. Compiling DESTINY
+The following DATE-2015 paper provides a general introduction of DESTINY and the technical report 
+describes the tool in more  detail and also shows its use in performing design-space exploration. 
+If you use DESTINY in a research publication, we request you to cite any of the these publications. 
+
+Matthew Poremba, Sparsh Mittal, Dong Li, Jeffrey S Vetter and Yuan Xie, "DESTINY: A Tool for 
+Modeling Emerging 3D NVM and eDRAM caches",  Design Automation and Test in Europe (DATE), 2015.
+(available here http://goo.gl/3nKAM2)
+
+Sparsh Mittal, Matthew Poremba,  Jeffrey S Vetter and Yuan Xie, "Exploring Design Space 
+of 3D NVM and eDRAM Caches Using DESTINY Tool", ORNL Technical Report no. ORNL/TM-2014/636, 2014
+(available here http://goo.gl/qzyWFE). 
+
+This work was supported by the Office of Advanced Scientific Computing Research in 
+the U.S. Department of Energy, under the project “Blackcomb - Hardware-Software
+ Co-design for Non-Volatile Memory in Exascale Systems” (https://ft.ornl.gov/trac/blackcomb/).
+ For information, please see our webpage http://ft.ornl.gov/. 
+
+Support for DESTINY is provided on a best-effort basis. For receiving announcements,
+ or sending questions and comments, please subscribe to the mailing list
+ destiny-help@elist.ornl.gov by visiting the following 
+webpage: https://elist.ornl.gov/mailman/listinfo/destiny-help
+
+-------------------------------------------------------
+
+###  Compiling DESTINY
 
 DESTINY is developed in C++. It can be compiled on both Microsoft Windows and Unix-like OSes. 
 To build the tool under Linux, simply issue
 
      $ make
--------------------------------------------------------
 
-3. Running DESTINY
+-------------------------------------------------------
+###  Running DESTINY
 
 DESTINY must be compiled with a user-specified configuration files, as follows:
 
       $ ./destiny <file>.cfg
 
 -------------------------------------------------------
-4. The meaning and possible values of parameters added in DESTINY
+###  The meaning and possible values of parameters added in DESTINY
 
 -StackedDieCount - Number of dies over which the memory is distributed
 
@@ -86,7 +112,7 @@ target (can be used to find the best of multiple technology inputs).
 
 -------------------------------------------------------
 
-5. Hacking DESTINY code and possible extensions
+###  Hacking DESTINY code and possible extensions
 
 We expect that end-users of DESTINY should be able to easily modify it to add 
 various features. We are also working to add new features to it and provide a documentation.
@@ -95,32 +121,3 @@ Some possible extensions to DESTINY include, adding MLC (multi-level cell) model
 modeling other memory technologies such as race-track memory (domain wall memory) etc. 
 
 We welcome any contribution from the end-users of DESTINY. 
-
--------------------------------------------------------
-
-6. Relevant papers
-
-The following DATE-2015 paper provides a general introduction of DESTINY and the technical report 
-describes the tool in more  detail and also shows its use in performing design-space exploration. 
-If you use DESTINY in a research publication, we request you to cite any of the these paper/report. 
-
-Matthew Poremba, Sparsh Mittal, Dong Li, Jeffrey S Vetter and Yuan Xie, "DESTINY: A Tool for 
-Modeling Emerging 3D NVM and eDRAM caches",  Design Automation and Test in Europe (DATE), 2015.
-
-Sparsh Mittal, Matthew Poremba,  Jeffrey S Vetter and Yuan Xie, "Exploring Design Space 
-of 3D NVM and eDRAM Caches Using DESTINY Tool", ORNL Technical Report no. ORNL/TM-2014/636, 2014. 
-
-		
-	
--------------------------------------------------------
-7. Contact 
-
-For questions and comments, contact
-Matthew Poremba (poremba@cse.psu.edu)
-Sparsh Mittal(sparsh0mittal@gmail.com)
-
-
-
-
-
-
