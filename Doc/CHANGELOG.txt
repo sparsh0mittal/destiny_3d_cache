@@ -1,0 +1,8 @@
+This file list important updates made to DESTINY.
+
+
+Apr 2015
+* Initial documentation added under Doc folder
+
+Feb 2015
+* DESTINY code released

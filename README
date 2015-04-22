@@ -20,16 +20,20 @@ both conventional and emerging technologies. DESTINY has been validated against 
 commercial prototypes. It can be used to model technology nodes ranging from 22nm to 180nm. 
 Thus, DESTINY is intended to be a comprehensive tool.  
 
-Matthew Poremba and Sparsh Mittal are lead-developers of DESTINY.
+Sparsh Mittal and Matthew Poremba are lead-developers of DESTINY.
 
 DESTINY utilizes the framework for modeling 2D SRAM and 2D NVM from NVSim.
 Also, the coarse- and fine-grained TSV (through silicon via) models are utilized from CACTI-3DD. 
 
+### Documentation
+
+The file ''DESTINY_Documentation'' under folder 'Doc' provides a brief manual of DESTINY. It shows an example configuration file and the corresponding output of DESTINY, which may be especially useful for a user who wants to get an overview of DESTINY even before installing it. The manual also provides ideas and suggestions for integrating DESTINY into architectural simulators and is expected to answer some of the ``frequently asked questions'' related to DESTINY.
+
 ### Sponsors
 
 This work was supported by the Office of Advanced Scientific Computing Research in 
-the U.S. Department of Energy, under the project “Blackcomb - Hardware-Software
- Co-design for Non-Volatile Memory in Exascale Systems” (https://ft.ornl.gov/trac/blackcomb/).
+the U.S. Department of Energy, under the project 'Blackcomb - Hardware-Software
+ Co-design for Non-Volatile Memory in Exascale Systems' (https://ft.ornl.gov/trac/blackcomb/).
  For information, please see our webpage http://ft.ornl.gov/. 
  
 ------------------------------------------------------
