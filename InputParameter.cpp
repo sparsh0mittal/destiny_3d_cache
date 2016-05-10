@@ -115,6 +115,7 @@ void InputParameter::ReadInputParameterFromFile(const std::string & inputFile) {
 
 	if (!fp) {
 		cout << inputFile << " cannot be found!\n";
+		cout<<" This file may be present in \"config\" folder. If so, please run destiny from that folder, otherwise, change the file name to include folder location.\n";
 		exit(-1);
 	}
 
@@ -694,7 +695,8 @@ void InputParameter::PrintInputParameter() {
 	// TO-DO: tedious work here!!!
 
 	if (optimizationTarget == full_exploration) {
-		cout << endl << "Full design space exploration ... might take hours" << endl;
+		cout << endl << "Full design space exploration ... might take hours and will produce a csv" << endl;
+		cout << "If you are interested in optimizing for a single metric only, please change -OptimizationTarget in *cfg file, for example \n -OptimizationTarget: WriteEDP" << endl;
 	} else {
 		cout << endl << "Searching for the best solution that is optimized for ";
 		switch (optimizationTarget) {

@@ -75,6 +75,7 @@ void MemCell::ReadCellFromFile(const string & inputFile)
 
 	if (!fp) {
 		cout << inputFile << " cannot be found!\n";
+		cout<<" This file may be present in \"config\" folder. If so, please run destiny from that folder, otherwise, change the file name to include folder location.\n";
 		exit(-1);
 	}
 

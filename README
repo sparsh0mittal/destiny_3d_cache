@@ -130,6 +130,12 @@ target (can be used to find the best of multiple technology inputs).
 -ForceBankA: Same as ForceBank in NVSim, except forcing the number of active Mats is not required.
 -ForceMatA: Same as ForceMat in NVSim, except forcing the number of active Subarrays is not required.
 
+Making output concise or detailed:
+-PrintLevel: 0 -> does NOT produce CACHE DATA ARRAY DETAILS and CACHE TAG ARRAY DETAILS
+Or
+-PrintLevel: 1 -> produces CACHE DATA ARRAY DETAILS and CACHE TAG ARRAY DETAILS 
+For more details on this, see Result.cpp file.
+
 -------------------------------------------------------
 
 ###  Hacking DESTINY code and possible extensions
