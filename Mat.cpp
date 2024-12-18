@@ -74,7 +74,7 @@ void Mat::Initialize(int _numRowSubarray, int _numColumnSubarray, int _numAddres
 
 	/* Determine the number of rows in a subarray */
 	numRow = 1 << _numAddressBit;
-	if (memoryType == data)
+	if (memoryType == MemoryType::data)
 		numRow *= numWay;	/* Only for cache design that partitions a set into multiple rows */
 	numRow /= (muxSenseAmp * muxOutputLev1 * muxOutputLev2);	/* Distribute to column decoding */
 	if (numRow == 0) {
