@@ -505,7 +505,7 @@ int nvsim(ofstream& outputFile, string inputFileName, long long& numSolution, Re
 					(bool)isGlobalWireLowSwing);
 			for (int i = 0; i < (int)full_exploration; i++) {
 				LOAD_LOCAL_WIRE(bestDataResults[i]);
-				TRY_AND_UPDATE(bestDataResults[i], data);
+				TRY_AND_UPDATE(bestDataResults[i], MemoryType::data);
 			}
 			if (inputParameter->optimizationTarget == full_exploration && !inputParameter->isPruningEnabled) {
 				OUTPUT_TO_FILE;
@@ -606,7 +606,7 @@ int nvsim(ofstream& outputFile, string inputFileName, long long& numSolution, Re
 				/* To aggressive partitioning */
 				continue;
 			}
-			CALCULATE(dataBank, data);
+			CALCULATE(dataBank, MemoryType::data);
             numDesigns++;
 			if (!dataBank->invalid && dataBank->readLatency <= allowedDataReadLatency && dataBank->writeLatency <= allowedDataWriteLatency
 					&& dataBank->readDynamicEnergy <= allowedDataReadDynamicEnergy && dataBank->writeDynamicEnergy <= allowedDataWriteDynamicEnergy
